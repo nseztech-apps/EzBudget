@@ -1,0 +1,67 @@
+import { WizardSectionConfig } from '../../types';
+
+export const section1: WizardSectionConfig = {
+  id: 'agregado',
+  order: 1,
+  title: 'Agregado Familiar',
+  description: 'Informações sobre o seu agregado familiar e situação financeira geral.',
+  icon: '👨‍👩‍👧‍👦',
+  questions: [
+    {
+      id: 'q1_num_pessoas',
+      sectionId: 'agregado',
+      text: 'Quantas pessoas compõem o seu agregado familiar?',
+      inputType: 'number',
+      validation: { required: true, min: 1, max: 20 },
+      supportsAnswerState: true,
+      helpText: 'Inclua todas as pessoas que vivem na mesma casa.',
+    },
+    {
+      id: 'q1_dependentes',
+      sectionId: 'agregado',
+      text: 'Quantos dependentes (filhos/menores) tem?',
+      inputType: 'number',
+      validation: { required: true, min: 0, max: 15 },
+      supportsAnswerState: true,
+      helpText: 'Filhos menores de 18 anos ou dependentes a cargo.',
+    },
+    {
+      id: 'q1_rendimento',
+      sectionId: 'agregado',
+      text: 'Qual é o rendimento líquido mensal do agregado?',
+      inputType: 'number',
+      validation: { required: true, min: 0 },
+      supportsAnswerState: true,
+      helpText: 'Soma de todos os rendimentos líquidos mensais (após impostos).',
+    },
+    {
+      id: 'q1_objetivo',
+      sectionId: 'agregado',
+      text: 'Qual é o seu principal objetivo com esta auditoria?',
+      inputType: 'select',
+      options: [
+        { value: 'reduzir_gastos', label: 'Reduzir gastos mensais' },
+        { value: 'identificar_desperdicio', label: 'Identificar desperdícios' },
+        { value: 'poupar_objetivo', label: 'Poupar para um objetivo específico' },
+        { value: 'controlar_financas', label: 'Ter mais controlo das finanças' },
+        { value: 'outro', label: 'Outro' },
+      ],
+      supportsAnswerState: false,
+    },
+    {
+      id: 'q1_zona',
+      sectionId: 'agregado',
+      text: 'Em que zona de Portugal reside?',
+      inputType: 'select',
+      options: [
+        { value: 'grande_lisboa', label: 'Grande Lisboa' },
+        { value: 'grande_porto', label: 'Grande Porto' },
+        { value: 'litoral_centro', label: 'Litoral Centro' },
+        { value: 'interior', label: 'Interior' },
+        { value: 'algarve', label: 'Algarve' },
+        { value: 'ilhas', label: 'Açores / Madeira' },
+      ],
+      supportsAnswerState: false,
+    },
+  ],
+};

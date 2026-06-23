@@ -1,0 +1,73 @@
+import { WizardSectionConfig } from '../../types';
+
+export const section11: WizardSectionConfig = {
+  id: 'compras_impulso',
+  order: 11,
+  title: 'Compras por Impulso',
+  description: 'Compras não planeadas e padrões de consumo impulsivo.',
+  icon: '🛒',
+  questions: [
+    {
+      id: 'q11_frequencia',
+      sectionId: 'compras_impulso',
+      text: 'Com que frequência faz compras não planeadas?',
+      inputType: 'select',
+      options: [
+        { value: 'daily', label: 'Quase todos os dias' },
+        { value: 'often', label: 'Várias vezes por semana' },
+        { value: 'sometimes', label: 'Algumas vezes por mês' },
+        { value: 'rarely', label: 'Raramente' },
+        { value: 'never', label: 'Quase nunca' },
+      ],
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q11_valor_medio',
+      sectionId: 'compras_impulso',
+      text: 'Qual o valor médio de uma compra por impulso?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+      helpText: 'Pense nas últimas compras não planeadas que fez.',
+    },
+    {
+      id: 'q11_gasto_mensal',
+      sectionId: 'compras_impulso',
+      text: 'Quanto estima gastar por mês em compras impulsivas?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+      scoringTags: ['impulse'],
+    },
+    {
+      id: 'q11_categorias',
+      sectionId: 'compras_impulso',
+      text: 'Em que categorias faz mais compras por impulso?',
+      inputType: 'multi-select',
+      options: [
+        { value: 'roupa', label: 'Roupa e acessórios' },
+        { value: 'tecnologia', label: 'Tecnologia e gadgets' },
+        { value: 'decoracao', label: 'Decoração e casa' },
+        { value: 'alimentacao', label: 'Alimentação/snacks' },
+        { value: 'beleza', label: 'Beleza e cuidados pessoais' },
+        { value: 'entretenimento', label: 'Entretenimento' },
+        { value: 'outro', label: 'Outro' },
+      ],
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q11_arrependimento',
+      sectionId: 'compras_impulso',
+      text: 'Com que frequência se arrepende dessas compras?',
+      inputType: 'select',
+      options: [
+        { value: 'always', label: 'Quase sempre' },
+        { value: 'often', label: 'Frequentemente' },
+        { value: 'sometimes', label: 'Às vezes' },
+        { value: 'rarely', label: 'Raramente' },
+        { value: 'never', label: 'Nunca' },
+      ],
+      supportsAnswerState: true,
+    },
+  ],
+};

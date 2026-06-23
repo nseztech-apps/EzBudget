@@ -1,0 +1,66 @@
+import { WizardSectionConfig } from '../../types';
+
+export const section9: WizardSectionConfig = {
+  id: 'refeicoes_fora',
+  order: 9,
+  title: 'Refeições Fora de Casa',
+  description: 'Restaurantes, takeaway, cafés e alimentação fora de casa.',
+  icon: '🍽️',
+  questions: [
+    {
+      id: 'q9_almoco_fora',
+      sectionId: 'refeicoes_fora',
+      text: 'Quantas vezes por semana almoça fora (dias de trabalho)?',
+      inputType: 'number',
+      validation: { min: 0, max: 7 },
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q9_custo_almoco',
+      sectionId: 'refeicoes_fora',
+      text: 'Qual o custo médio de um almoço fora?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+      helpText: 'Valor médio por refeição em euros.',
+    },
+    {
+      id: 'q9_jantar_fora',
+      sectionId: 'refeicoes_fora',
+      text: 'Quantas vezes por mês janta fora ou pede takeaway?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q9_custo_jantar',
+      sectionId: 'refeicoes_fora',
+      text: 'Qual o custo médio de um jantar fora/takeaway?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q9_cafe_diario',
+      sectionId: 'refeicoes_fora',
+      text: 'Quantos cafés/bebidas compra por dia fora de casa?',
+      inputType: 'number',
+      validation: { min: 0, max: 20 },
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q9_apps_delivery',
+      sectionId: 'refeicoes_fora',
+      text: 'Usa apps de delivery (Uber Eats, Glovo, etc.)?',
+      inputType: 'select',
+      options: [
+        { value: 'daily', label: 'Quase todos os dias' },
+        { value: 'often', label: 'Várias vezes por semana' },
+        { value: 'sometimes', label: 'Algumas vezes por mês' },
+        { value: 'rarely', label: 'Raramente' },
+        { value: 'never', label: 'Nunca' },
+      ],
+      supportsAnswerState: true,
+    },
+  ],
+};
