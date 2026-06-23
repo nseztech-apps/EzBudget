@@ -1,0 +1,72 @@
+import { WizardSectionConfig } from '../../types';
+
+export const section6: WizardSectionConfig = {
+  id: 'ginasios',
+  order: 6,
+  title: 'Ginásios, Clubes e Membros',
+  description: 'Mensalidades de ginásios, clubes desportivos e outras adesões.',
+  icon: '🏋️',
+  questions: [
+    {
+      id: 'q6_ginasio',
+      sectionId: 'ginasios',
+      text: 'Tem mensalidade de ginásio ativa?',
+      inputType: 'boolean',
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q6_ginasio_valor',
+      sectionId: 'ginasios',
+      text: 'Qual o valor mensal do ginásio?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q6_ginasio_uso',
+      sectionId: 'ginasios',
+      text: 'Com que frequência vai ao ginásio?',
+      inputType: 'select',
+      options: [
+        { value: 'daily', label: '4+ vezes por semana' },
+        { value: 'often', label: '2-3 vezes por semana' },
+        { value: 'sometimes', label: '1 vez por semana' },
+        { value: 'rarely', label: '1-2 vezes por mês' },
+        { value: 'never', label: 'Não vou há mais de 1 mês' },
+      ],
+      supportsAnswerState: true,
+      scoringTags: ['low-usage'],
+    },
+    {
+      id: 'q6_ginasio_falta',
+      sectionId: 'ginasios',
+      text: 'Se cancelasse o ginásio, sentiria falta?',
+      inputType: 'boolean',
+      supportsAnswerState: true,
+      scoringTags: ['wouldnt-miss'],
+    },
+    {
+      id: 'q6_clube',
+      sectionId: 'ginasios',
+      text: 'Tem outras adesões/clubes com mensalidade (ex: padel, natação)?',
+      inputType: 'boolean',
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q6_clube_valor',
+      sectionId: 'ginasios',
+      text: 'Qual o custo mensal total dessas adesões?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q6_renovacao_auto',
+      sectionId: 'ginasios',
+      text: 'Algum destes contratos renova automaticamente?',
+      inputType: 'boolean',
+      supportsAnswerState: true,
+      scoringTags: ['auto-renewal'],
+    },
+  ],
+};

@@ -1,0 +1,72 @@
+import { WizardSectionConfig } from '../../types';
+
+export const section2: WizardSectionConfig = {
+  id: 'habitacao',
+  order: 2,
+  title: 'Habitação e Contas Fixas',
+  description: 'Despesas relacionadas com a sua habitação e contas regulares.',
+  icon: '🏠',
+  questions: [
+    {
+      id: 'q2_tipo_habitacao',
+      sectionId: 'habitacao',
+      text: 'Qual é a sua situação habitacional?',
+      inputType: 'select',
+      options: [
+        { value: 'propria_credito', label: 'Casa própria com crédito' },
+        { value: 'propria_paga', label: 'Casa própria sem crédito' },
+        { value: 'arrendada', label: 'Casa arrendada' },
+        { value: 'familiar', label: 'Casa de família' },
+      ],
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q2_renda_prestacao',
+      sectionId: 'habitacao',
+      text: 'Qual o valor mensal da renda ou prestação do crédito?',
+      inputType: 'number',
+      validation: { required: false, min: 0 },
+      supportsAnswerState: true,
+      helpText: 'Valor mensal em euros. Deixe em branco se não aplicável.',
+    },
+    {
+      id: 'q2_condominio',
+      sectionId: 'habitacao',
+      text: 'Paga condomínio? Se sim, qual o valor mensal?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+    },
+    {
+      id: 'q2_seguro_casa',
+      sectionId: 'habitacao',
+      text: 'Tem seguro multirriscos da habitação? Qual o custo anual?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+      scoringTags: ['insurance', 'reviewable'],
+      helpText: 'Valor anual do seguro em euros.',
+    },
+    {
+      id: 'q2_ultimo_review_seguro',
+      sectionId: 'habitacao',
+      text: 'Quando foi a última vez que comparou seguros de habitação?',
+      inputType: 'select',
+      options: [
+        { value: 'under_12_months', label: 'Há menos de 12 meses' },
+        { value: 'over_12_months', label: 'Há mais de 12 meses' },
+        { value: 'never', label: 'Nunca comparei' },
+      ],
+      supportsAnswerState: true,
+      scoringTags: ['not-reviewed'],
+    },
+    {
+      id: 'q2_agua',
+      sectionId: 'habitacao',
+      text: 'Qual o valor médio mensal da conta da água?',
+      inputType: 'number',
+      validation: { min: 0 },
+      supportsAnswerState: true,
+    },
+  ],
+};
